@@ -1,9 +1,7 @@
-import uuid from 'uuid'
 import Vue from 'vue'
 import App from './App.vue'
 
 
-console.log(uuid())
 console.log(App)
 console.log(Vue)
 
@@ -15,6 +13,8 @@ new Vue({
     data: {
         message: 'aho'
     },
-    components: { App }, // Appというコンポーネントを使うよ、という宣言
-    template: '<app/>',
+    components: {
+        App
+    }, // Appというコンポーネントを使うよ、という宣言
+    template: '<App/>',  // This is the HTML inserted into the el
 })

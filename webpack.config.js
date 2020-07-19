@@ -1,4 +1,6 @@
+// Use this for the calculating the output path (absolute path)
 var path = require('path');
+
 // vue-loader@15から必要
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
@@ -28,9 +30,18 @@ module.exports = {
             {
                 test: /\.vue$/,
                 use: 'vue-loader'
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'vue-style-loader',
+                    'css-loader',
+                ]
             }
         ]
     },
+
+    plugins: [new VueLoaderPlugin()],
 
     resolve: {
         // import './foo.vue' の代わりに import './foo' と書けるようになる(拡張子省略)
@@ -39,7 +50,5 @@ module.exports = {
             // vue-template-compilerに読ませてコンパイルするために必要
             vue$: 'vue/dist/vue.esm.js',
         },
-    },
-
-    plugins: [new VueLoaderPlugin()]
+    }
 };
