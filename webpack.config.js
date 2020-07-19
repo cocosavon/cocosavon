@@ -19,5 +19,23 @@ module.exports = {
 
         // Output file name.  All the files are merged into this file
         filename: 'bundle.js',
-    }
+    },
+
+    module:{
+        rules: [
+            {
+                test: /\.vue$/,
+                use: 'vue-loader'
+            }
+        ]
+    },
+
+    resolve: {
+        // import './foo.vue' の代わりに import './foo' と書けるようになる(拡張子省略)
+        extensions: ['.js', '.vue'],
+        alias: {
+            // vue-template-compilerに読ませてコンパイルするために必要
+            vue$: 'vue/dist/vue.esm.js',
+        },
+    },
 };
