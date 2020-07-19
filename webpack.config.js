@@ -1,4 +1,6 @@
 var path = require('path');
+// vue-loader@15から必要
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
     // It's better to set either development/production/none, otherwise you can get a warnining message
@@ -38,4 +40,6 @@ module.exports = {
             vue$: 'vue/dist/vue.esm.js',
         },
     },
+
+    plugins: [new VueLoaderPlugin()]
 };
