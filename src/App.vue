@@ -3,6 +3,7 @@
         <p>Hello, World!</p>
         <div class="test">
             {{ msg }}
+            <router-view />
         </div>
     </div>
 </template>

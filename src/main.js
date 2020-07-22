@@ -4,13 +4,16 @@ import router from './router'
 //require( '../node_modules/bootstrap/dist/css/bootstrap.css' );
 
 new Vue({
+    router,
     el: '#app',
     data: {
         message: 'aho'
     },
     components: {
-        // Appというコンポーネントを使うよ、という宣言
         App
     },
-    template: '<App/>',  // This is the HTML inserted into the el
+    template: '<div>' +
+                  '<App />' +
+              '</div>',  // This is just normal HTML inserted into the 'el' defined above
+
 })
