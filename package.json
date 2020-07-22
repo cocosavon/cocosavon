@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.0",
+    "vue-router": "^3.3.4",
     "webpack": "^4.43.0"
   },
   "devDependencies": {

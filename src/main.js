@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-require( '../node_modules/bootstrap/dist/css/bootstrap.css' );
+import router from './router'
+//require( '../node_modules/bootstrap/dist/css/bootstrap.css' );
 
 new Vue({
     el: '#app',
