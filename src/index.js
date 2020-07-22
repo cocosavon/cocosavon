@@ -1,12 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-
-
-console.log(App)
-console.log(Vue)
-
-
-console.log(App)
+require( '../node_modules/bootstrap/dist/css/bootstrap.css' );
 
 new Vue({
     el: '#app',
@@ -14,7 +8,8 @@ new Vue({
         message: 'aho'
     },
     components: {
+        // Appというコンポーネントを使うよ、という宣言
         App
-    }, // Appというコンポーネントを使うよ、という宣言
+    },
     template: '<App/>',  // This is the HTML inserted into the el
 })
