@@ -1,10 +1,8 @@
 <template>
     <div>
-        <p>Hello, World!</p>
         <router-link to="/">Home</router-link>
         <router-link to="/calc">Calc</router-link>
         <div class="test">
-            {{ msg }}
             <router-view />
         </div>
     </div>
@@ -12,12 +10,14 @@
 
 <script>
 import uuid from 'uuid'
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-material-design/dist/css/bootstrap-material-design.css';
 
 export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      //msg: 'Welcome to Your Vue.js App'
     }
   }
 }
