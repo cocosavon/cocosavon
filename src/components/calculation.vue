@@ -1,7 +1,6 @@
 <template>
     <div>
-        <p>About</p>
-        <router-view />
+        <p>Calculation</p>
     </div>
 </template>
 

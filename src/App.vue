@@ -1,6 +1,8 @@
 <template>
     <div>
         <p>Hello, World!</p>
+        <router-link to="/">Home</router-link>
+        <router-link to="/calc">Calc</router-link>
         <div class="test">
             {{ msg }}
             <router-view />
