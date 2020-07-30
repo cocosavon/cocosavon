@@ -12,8 +12,12 @@
 
 <script>
 import uuid from 'uuid'
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-material-design/dist/css/bootstrap-material-design.css';
+//import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap-material-design/dist/css/bootstrap-material-design.css';
+import 'mdbootstrap/css/bootstrap.min.css'
+//import 'mdbootstrap/css/mdb.css'
+import 'mdbootstrap/css/style.css'
+
 
 export default {
   name: 'HelloWorld',
