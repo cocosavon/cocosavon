@@ -290,6 +290,8 @@ const firebase = require("firebase");
 require("firebase/firestore");
 import $ from 'jquery'
 import Vue from 'vue'
+import '@fortawesome/fontawesome-free/js/fontawesome';
+
 
 export default {
     data: function(){
@@ -515,4 +517,33 @@ export default {
 </script>
 
 <style lang="css">
+body {
+    margin: 0;
+    /*background: url("./bg-pattern.png") repeat;*/
+    background: #fff9e0;
+    color: grey;
+} 
+.main-title {
+    /* font-family: 'Comfortaa', cursive; 
+    font-family: 'Varela Round', sans-serif; */
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 2em;
+}
+.main-color {
+    color: #e9967a;
+}
+.bg-selected {
+    /*background-color: lightblue;*/
+    background-color: rgba(0, 188, 212, 0.3)
+}
+.text-right {
+    text-align: right;
+}
+.result-color {
+    /* background-color: #ff8c00; */
+    background-color: darkorange;
+}
+.configuration-color {
+    background-color: darkgray;
+}
 </style>
