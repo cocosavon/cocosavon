@@ -23,6 +23,11 @@
                 </svg>
             </div>
         </div>
+        <div class="row mt-5">
+            <div class="col-sm-12 text-center">
+                <a href="https://www.instagram.com/coco_savon_perth">instagram.com/coco_savon_perth</a>
+            </div>
+        </div>
         <!--
         <router-view />
         -->
