@@ -12,13 +12,13 @@
         </div>
         <div class="row">
             <div class="col-sm-12 text-center">
-                <svg transform="scale(1)" width="440" height="100" style="display:block;margin:auto;">
+                <svg transform="scale(1)" :width="4*(soap_width+10)+soap_width" :height="soap_height" style="display:block;margin:auto;">
                     <g>
-                      <rect x="0" width="80" height="100" style="fill:#bf8686de;" />
-                      <rect x="90" width="80" height="100" style="fill:#bcbf86de;" />
-                      <rect x="180" width="80" height="100" style="fill:#86bbbfde;" />
-                      <rect x="270" width="80" height="100" style="fill:#8686bfde;" />
-                      <rect x="360" width="80" height="100" style="fill:#af86bfde;" />
+                      <rect :x="0" :width="soap_width" :height="soap_height" style="fill:#bf8686de;" />
+                      <rect :x="1*(soap_width+10)" :width="soap_width" :height="soap_height" style="fill:#bcbf86de;" />
+                      <rect :x="2*(soap_width+10)" :width="soap_width" :height="soap_height" style="fill:#86bbbfde;" />
+                      <rect :x="3*(soap_width+10)" :width="soap_width" :height="soap_height" style="fill:#8686bfde;" />
+                      <rect :x="4*(soap_width+10)" :width="soap_width" :height="soap_height" style="fill:#af86bfde;" />
                     </g>
                 </svg>
             </div>
@@ -36,7 +36,12 @@
 
 <script>
 export default {
-
+    data: function(){
+        return {
+            soap_width: 50,
+            soap_height: 50,
+        }
+    }
 }
 </script>
 
@@ -44,12 +49,12 @@ export default {
 .title {
     color: #888;
     font-family: 'Varela Round', sans-serif;
-    font-size: xxx-large;
+    font-size: xx-large;
     height: 1.2em;
 }
 .subtitle {
     color: #888;
-    font-size: x-large;
+    font-size: large;
     font-family: 'Varela Round', sans-serif;
 }
 </style>
