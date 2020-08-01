@@ -24,8 +24,8 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-sm-12 text-center">
-                <a href="https://www.instagram.com/coco_savon_perth">instagram.com/coco_savon_perth</a>
+            <div class="col-sm-12 text-center sns-link">
+                <a href="https://www.instagram.com/coco_savon_perth"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
         </div>
         <!--
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import '@fortawesome/fontawesome-free/js/all.js';
+
 export default {
     data: function(){
         return {
@@ -56,5 +58,8 @@ export default {
     color: #888;
     font-size: large;
     font-family: 'Varela Round', sans-serif;
+}
+.sns-link {
+    text-decoration: none;
 }
 </style>
