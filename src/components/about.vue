@@ -24,12 +24,22 @@
             </div>
         </div>
 
+        <div class="row mt-3">
+            <div class="col-sm-12 text-center">
+                <div class="subtitle">Perth, Australia</div>
+            </div>
+        </div>
+
         <div class="row mt-5">
             <img :src="main_image_1" alt="soaps" width="100%"/> 
         </div>
 
         <div class="row mt-5">
             <img :src="main_image_2" alt="soaps" width="100%"/> 
+        </div>
+
+        <div class="row mt-5">
+            <img :src="main_image_construction" alt="soaps" width="100%"/> 
         </div>
 
         <!--
@@ -40,20 +50,20 @@
         </div>
         -->
 
+            <!--
         <div class="card mt-5" id="under_construction_card">
             <div class="col-sm-12 text-center p-3">
                 This website is under construction
             </div>
 
-            <!--
             <img class="card-img-top" :src="under_construction_image" alt="Card image">
             <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text.</p>
                 <a href="#" class="btn btn-primary">See Profile</a>
             </div>
-            -->
         </div>
+            -->
 
         <div class="row mt-5 section-links pt-5 pb-5">
             <!--
@@ -74,6 +84,7 @@
 <script>
 import main_image_1 from "../assets/cocosavon-landing-page-main-image.png"
 import main_image_2 from "../assets/cocosavon-landing-page-main-image2.png"
+import main_image_construction from "../assets/cocosavon-landing-page-main-image-construction.png"
 import under_construction_image from "../assets/cocosavon-under-construction.png"
 
 export default {
@@ -83,6 +94,7 @@ export default {
             soap_height: 50,
             main_image_1: main_image_1,
             main_image_2: main_image_2,
+            main_image_construction: main_image_construction,
             under_construction_image: under_construction_image,
         }
     }
