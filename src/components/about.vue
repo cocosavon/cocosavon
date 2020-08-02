@@ -82,10 +82,10 @@
 </template>
 
 <script>
-import main_image_1 from "../assets/cocosavon-landing-page-main-image.png"
-import main_image_2 from "../assets/cocosavon-landing-page-main-image2.png"
-import main_image_construction from "../assets/cocosavon-landing-page-main-image-construction.png"
-import under_construction_image from "../assets/cocosavon-under-construction.png"
+import main_image_1 from "../assets/cocosavon-landing-page-main-image.jpg"
+import main_image_2 from "../assets/cocosavon-landing-page-main-image2.jpg"
+import main_image_construction from "../assets/cocosavon-landing-page-main-image-construction.jpg"
+//import under_construction_image from "../assets/cocosavon-under-construction.jpg"
 
 export default {
     data: function(){
@@ -95,7 +95,7 @@ export default {
             main_image_1: main_image_1,
             main_image_2: main_image_2,
             main_image_construction: main_image_construction,
-            under_construction_image: under_construction_image,
+            //under_construction_image: under_construction_image,
         }
     }
 }
