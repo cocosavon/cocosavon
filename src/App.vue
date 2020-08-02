@@ -4,9 +4,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/calc">Calc</router-link>
         -->
-        <div class="test">
-            <router-view />
-        </div>
+        <router-view />
     </div>
 </template>
 

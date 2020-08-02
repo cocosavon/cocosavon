@@ -34,6 +34,17 @@
             <img :src="main_image_1" alt="soaps" width="100%"/> 
         </div>
 
+        <div class="row mt-5 d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" :src="online_store_image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Online Store</h5>
+                    <p class="card-text">Online Store comming soon...</p>
+                    <button class="btn btn-primary" disabled>Go to online shop</button>
+                </div>
+            </div>
+        </div>
+
         <div class="row mt-5">
             <img :src="main_image_2" alt="soaps" width="100%"/> 
         </div>
@@ -89,6 +100,7 @@
 import main_image_1 from "../assets/cocosavon-landing-page-main-image.jpg"
 import main_image_2 from "../assets/cocosavon-landing-page-main-image2.jpg"
 import main_image_construction from "../assets/cocosavon-landing-page-main-image-construction.jpg"
+import online_store_image from "../assets/cocosavon-online-store.jpg"
 //import under_construction_image from "../assets/cocosavon-under-construction.jpg"
 
 export default {
@@ -99,6 +111,7 @@ export default {
             main_image_1: main_image_1,
             main_image_2: main_image_2,
             main_image_construction: main_image_construction,
+            online_store_image: online_store_image,
             //under_construction_image: under_construction_image,
         }
     }
