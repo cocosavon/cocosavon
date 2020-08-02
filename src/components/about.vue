@@ -74,7 +74,11 @@
             <div class="col-sm-12 text-center sns-link">
                 <a href="https://www.instagram.com/coco_savon_perth"><i class="fab fa-instagram fa-2x"></i> Instagram</a>
             </div>
+            <div class="col-sm-12 text-center sns-link">
+                <a href="mailto:servicecocosavon@gmail.com"><i class="fa fa-envelope fa-1x" aria-hidden="true" style="font-size:x-large;"></i> service.cocosavon@gmail.com</a>
+            </div>
         </div>
+        
         <!--
         <router-view />
         -->
