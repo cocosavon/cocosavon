@@ -36,12 +36,25 @@
         </div>
         -->
 
+        <div class="card mt-5" id="under_construction_card">
+            <img class="card-img-top" :src="under_construction_image" alt="Card image">
+            <!--
+            <div class="card-body">
+                <h4 class="card-title">John Doe</h4>
+                <p class="card-text">Some example text.</p>
+                <a href="#" class="btn btn-primary">See Profile</a>
+            </div>
+            -->
+        </div>
+
         <div class="row mt-5 section-links pt-5 pb-5">
+            <!--
             <div class="col-sm-12 section-title text-center">
                 <span>Link(s)</span>
             </div>
+            -->
             <div class="col-sm-12 text-center sns-link">
-                <a href="https://www.instagram.com/coco_savon_perth"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.instagram.com/coco_savon_perth"><i class="fab fa-instagram fa-2x"></i> Instagram</a>
             </div>
         </div>
         <!--
@@ -52,6 +65,7 @@
 
 <script>
 import test_image from "../assets/test.jpg"
+import under_construction_image from "../assets/cocosavon-under-construction.png"
 
 export default {
     data: function(){
@@ -59,6 +73,7 @@ export default {
             soap_width: 50,
             soap_height: 50,
             test_image: test_image,
+            under_construction_image: under_construction_image,
         }
     }
 }
@@ -82,5 +97,8 @@ export default {
 .section-links {
     background: lightgray;
     color: white;
+}
+#under_construction_card {
+    border: solid 1em lightblue;
 }
 </style>
