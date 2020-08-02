@@ -116,6 +116,9 @@ export default {
 .sns-link {
     text-decoration: none;
 }
+.sns-link > a {
+    color: brown;
+}
 .section-links {
     background: lightgray;
     color: white;
