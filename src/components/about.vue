@@ -23,7 +23,23 @@
                 </svg>
             </div>
         </div>
+
         <div class="row mt-5">
+            <img :src="test_image" alt="soaps" width="100%"/> 
+        </div>
+
+        <!--
+        <div class="row mt-5 text-center section-about-us">
+            <div class="section-title">
+                About us
+            </div>
+        </div>
+        -->
+
+        <div class="row mt-5 section-links pt-5 pb-5">
+            <div class="col-sm-12 section-title text-center">
+                <span>Link(s)</span>
+            </div>
             <div class="col-sm-12 text-center sns-link">
                 <a href="https://www.instagram.com/coco_savon_perth"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
@@ -35,13 +51,14 @@
 </template>
 
 <script>
-import '@fortawesome/fontawesome-free/js/all.js';
+import test_image from "../assets/test.jpg"
 
 export default {
     data: function(){
         return {
             soap_width: 50,
             soap_height: 50,
+            test_image: test_image,
         }
     }
 }
@@ -61,5 +78,9 @@ export default {
 }
 .sns-link {
     text-decoration: none;
+}
+.section-links {
+    background: lightgray;
+    color: white;
 }
 </style>

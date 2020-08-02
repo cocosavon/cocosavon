@@ -17,6 +17,7 @@ import uuid from 'uuid'
 import 'mdbootstrap/css/bootstrap.min.css'
 //import 'mdbootstrap/css/mdb.css'
 import 'mdbootstrap/css/style.css'
+import '@fortawesome/fontawesome-free/js/all.js';
 
 
 export default {
