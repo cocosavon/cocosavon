@@ -25,7 +25,11 @@
         </div>
 
         <div class="row mt-5">
-            <img :src="test_image" alt="soaps" width="100%"/> 
+            <img :src="main_image_1" alt="soaps" width="100%"/> 
+        </div>
+
+        <div class="row mt-5">
+            <img :src="main_image_2" alt="soaps" width="100%"/> 
         </div>
 
         <!--
@@ -68,7 +72,8 @@
 </template>
 
 <script>
-import test_image from "../assets/cocosavon-landing-page-main-image.png"
+import main_image_1 from "../assets/cocosavon-landing-page-main-image.png"
+import main_image_2 from "../assets/cocosavon-landing-page-main-image2.png"
 import under_construction_image from "../assets/cocosavon-under-construction.png"
 
 export default {
@@ -76,7 +81,8 @@ export default {
         return {
             soap_width: 50,
             soap_height: 50,
-            test_image: test_image,
+            main_image_1: main_image_1,
+            main_image_2: main_image_2,
             under_construction_image: under_construction_image,
         }
     }
