@@ -37,8 +37,12 @@
         -->
 
         <div class="card mt-5" id="under_construction_card">
-            <img class="card-img-top" :src="under_construction_image" alt="Card image">
+            <div class="col-sm-12 text-center p-3">
+                This website is under construction
+            </div>
+
             <!--
+            <img class="card-img-top" :src="under_construction_image" alt="Card image">
             <div class="card-body">
                 <h4 class="card-title">John Doe</h4>
                 <p class="card-text">Some example text.</p>
@@ -64,7 +68,7 @@
 </template>
 
 <script>
-import test_image from "../assets/test.jpg"
+import test_image from "../assets/cocosavon-landing-page-main-image.png"
 import under_construction_image from "../assets/cocosavon-under-construction.png"
 
 export default {
@@ -100,5 +104,6 @@ export default {
 }
 #under_construction_card {
     border: solid 1em lightblue;
+    color: lightcoral;
 }
 </style>
