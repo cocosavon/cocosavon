@@ -339,7 +339,7 @@ export default {
 
         let vm = this
         vm.loading = true
-        let docRef = db.collection("oils").orderBy("category")
+        let docRef = db.collection("oils").orderBy("order")
         docRef.get().then(function(res) {
             res.forEach(doc => {
                 let oil = doc.data()
