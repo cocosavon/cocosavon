@@ -1,5 +1,5 @@
 <template>
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
         <div class="row">
             <div class="col-sm-12 text-center align-bottom">
                 <div class="title">Coco Savon</div>
@@ -26,12 +26,22 @@
 
         <div class="row mt-3">
             <div class="col-sm-12 text-center">
-                <div class="subtitle">Perth, Australia</div>
+                <div class="subtitle">--- Perth, Australia ---</div>
             </div>
         </div>
 
-        <div class="row mt-5">
-            <img :src="main_image_1" alt="soaps" width="100%"/> 
+        <div class="row">
+            <div class="col-lg-4 mt-5">
+                <img :src="main_image_1" alt="soaps" width="100%"/> 
+            </div>
+
+            <div class="col-lg-4 mt-5">
+                <img :src="main_image_2" alt="soaps" width="100%"/> 
+            </div>
+
+            <div class="col-lg-4 mt-5">
+                <img :src="main_image_construction" alt="soaps" width="100%"/> 
+            </div>
         </div>
 
         <div class="row mt-5 d-flex justify-content-center">
@@ -43,14 +53,6 @@
                     <button class="btn btn-primary" disabled>Go to online shop</button>
                 </div>
             </div>
-        </div>
-
-        <div class="row mt-5">
-            <img :src="main_image_2" alt="soaps" width="100%"/> 
-        </div>
-
-        <div class="row mt-5">
-            <img :src="main_image_construction" alt="soaps" width="100%"/> 
         </div>
 
         <!--
