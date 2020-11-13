@@ -22,8 +22,8 @@
                     <template v-else>
                         <template v-for="oil in oils_array">
                             <template v-if="oil.selected">
-                                <div class="container mb-2 bg-selected rounded">
-                                    <div class="row bg-selected rounded waves-effect" @click="oilClicked($event, oil)" :key="oil.id">
+                                <div class="container mb-2 rounded" :class="get_being_input_class(oil)">
+                                    <div class="row rounded waves-effect" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
                                         <div class="col-7 pt-1">
                                             <div class="">{{ oil.name_jp }}</div>
                                             <div class="small">({{ oil.name }})</div>
@@ -298,6 +298,7 @@ export default {
         return {
             loading: false,
             oils_array: [],
+            currently_being_input_oil: null,
             ratio_koh_to_naoh: 120.0 / 168,
             unit_g: 'g',
             unit_cc: 'cc',
@@ -421,6 +422,13 @@ export default {
         }
     },
     methods: {
+        get_being_input_class: function(oil){
+            if (oil == this.currently_being_input_oil){
+                return 'bg-being-input'
+            } else {
+                return 'bg-selected'
+            }
+        },
         configPlus1: function(e, config_name){
             if (config_name === 'percentage_of_water'){
                 this.percentage_of_water += 1
@@ -459,30 +467,36 @@ export default {
         },
         plus100: function(e, oil){
             oil.quantity = oil.quantity + 100
+            this.currently_being_input_oil = oil
         },
         plus10: function(e, oil){
             oil.quantity = oil.quantity + 10
+            this.currently_being_input_oil = oil
         },
         plus1: function(e, oil){
             oil.quantity = oil.quantity + 1
+            this.currently_being_input_oil = oil
         },
         minus100: function(e, oil){
             oil.quantity = oil.quantity - 100
             if (oil.quantity < 0){
                 oil.quantity = 0
             }
+            this.currently_being_input_oil = oil
         },
         minus10: function(e, oil){
             oil.quantity = oil.quantity - 10
             if (oil.quantity < 0){
                 oil.quantity = 0
             }
+            this.currently_being_input_oil = oil
         },
         minus1: function(e, oil){
             oil.quantity = oil.quantity - 1
             if (oil.quantity < 0){
                 oil.quantity = 0
             }
+            this.currently_being_input_oil = oil
         },
         confClicked: function(para) {
             if(para === 'percentage_of_water'){
@@ -501,7 +515,9 @@ export default {
             console.log(oil)
             //oil.selected = !oil.selected
             Vue.set(oil, 'selected', !oil.selected)
-
+            if (oil.selected){
+                this.currently_being_input_oil = oil
+            }
         },
         containsObject: function(obj, arr) {
             var i;
@@ -533,8 +549,10 @@ body {
     color: #e9967a;
 }
 .bg-selected {
-    /*background-color: lightblue;*/
     background-color: rgba(0, 188, 212, 0.3)
+}
+.bg-being-input {
+    background-color: rgba(210, 80, 92, 0.3)
 }
 .text-right {
     text-align: right;
