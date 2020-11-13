@@ -22,8 +22,17 @@
                     <template v-else>
                         <template v-for="oil in oils_array">
                             <template v-if="oil.selected">
-                                <div class="container mb-2 rounded" :class="get_being_input_class(oil)">
-                                    <div class="row rounded waves-effect" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
+                                <div class="container mb-2 rounded oil_wrapper" :class="get_being_input_class(oil)">
+                                    <div class="oil_close_icon" @click="oilCloseClicked($event, oil)">
+                                        <!-- i class="fas fa-times-circle fa-2x"></i -->
+                                        <span class="fa-stack fa-1x">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fas fa-times fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </div>
+
+
+                                    <div class="row rounded" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
                                         <div class="col-7 pt-1">
                                             <div class="">{{ oil.name_jp }}</div>
                                             <div class="small">({{ oil.name }})</div>
@@ -75,7 +84,7 @@
                             <template v-else>
                                 <div class="container mb-2">
                                     <div class="row" :key="oil.id">
-                                        <div class="col-12 waves-effect pt-1 pb-1" @click="oilClicked($event, oil)">
+                                        <div class="col-12 pt-1 pb-1" @click="oilClicked($event, oil)">
                                             <div class="">{{ oil.name_jp }}</div>
                                             <div class="small">({{ oil.name }})</div>
                                         </div>
@@ -88,7 +97,7 @@
             </div>
 
             <div class="card mb-2">
-                <div class="card-header configuration-color text-center waves-effect white-text py-2" @click="configurationClicked">その他の設定</div>
+                <div class="card-header configuration-color text-center white-text py-2" @click="configurationClicked">その他の設定</div>
                 <div class="card-body" id="configuration">
                     <template v-if="selected_percentage_of_water">
                         <div class="container mb-2 bg-selected rounded">
@@ -516,12 +525,18 @@ export default {
         configurationClicked: function() {
             this.configurationShown = !this.configurationShown
         },
+        oilCloseClicked: function(e, oil){
+            console.log('in oilCloseClicked')
+            if(oil.selected){
+                console.log('set selected false')
+                Vue.set(oil, 'selected', false)
+            }
+            e.stopPropagation()
+        },
         oilClicked: function(e, oil){
-            console.log('oilClicked')
-            console.log(oil)
-            //oil.selected = !oil.selected
-            Vue.set(oil, 'selected', !oil.selected)
-            if (oil.selected){
+            console.log('in oilClicked')
+            if(!oil.selected){
+                Vue.set(oil, 'selected', true)
                 this.currently_being_input_oil = oil
             }
         },
@@ -569,5 +584,16 @@ body {
 }
 .configuration-color {
     background-color: darkgray;
+}
+.oil_wrapper {
+    position: relative;
+    margin: 1em 0 0 0;
+}
+.oil_close_icon {
+    position: absolute;
+    right: -1em;
+    top: -0.6em;
+    color: crimson;
+    z-index: 1000;
 }
 </style>
