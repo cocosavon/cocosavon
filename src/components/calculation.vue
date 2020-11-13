@@ -35,32 +35,38 @@
                                     <div class="row small">
                                         <div class="col-2 mx-0 px-0 text-center" @click="minus100($event, oil)">
                                             <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
-                                                <i class="fa fa-minus-circle" aria-hidden="true"></i>100
+                                                <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                                                <div>100</div>
                                             </button>
                                         </div>
                                         <div class="col-2 mx-0 px-0 text-center" @click="minus10($event, oil)">
                                             <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
-                                                <i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;10
+                                                <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                                                <div>10</div>
                                             </button>
                                         </div>
                                         <div class="col-2 mx-0 px-0 text-center" @click="minus1($event, oil)">
                                             <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
-                                                <i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
+                                                <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                                                <div>1</div>
                                             </button>
                                         </div>
                                         <div class="col-2 mx-0 px-0 text-center" @click="plus1($event, oil)">
                                             <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
+                                                <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                <div>1</div>
                                             </button>
                                         </div>
                                         <div class="col-2 mx-0 px-0 text-center" @click="plus10($event, oil)">
                                             <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;10
+                                                <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                <div>10</div>
                                             </button>
                                         </div>
                                         <div class="col-2 mx-0 px-0 text-center" @click="plus100($event, oil)">
                                             <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                                <i class="fa fa-plus-circle" aria-hidden="true"></i>100
+                                                <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                <div>100</div>
                                             </button>
                                         </div>
                                     </div>
