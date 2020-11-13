@@ -23,13 +23,14 @@
                         <template v-for="oil in oils_array">
                             <template v-if="oil.selected">
                                 <div class="container mb-2 rounded oil_wrapper" :class="get_being_input_class(oil)">
+<!--
                                     <div class="oil_close_icon" @click="oilCloseClicked($event, oil)">
-                                        <!-- i class="fas fa-times-circle fa-2x"></i -->
                                         <span class="fa-stack fa-1x">
                                             <i class="fas fa-circle fa-stack-2x"></i>
                                             <i class="fas fa-times fa-stack-1x fa-inverse"></i>
                                         </span>
                                     </div>
+-->
 
 
                                     <div class="row rounded" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
@@ -534,9 +535,8 @@ export default {
             e.stopPropagation()
         },
         oilClicked: function(e, oil){
-            console.log('in oilClicked')
-            if(!oil.selected){
-                Vue.set(oil, 'selected', true)
+            Vue.set(oil, 'selected', !oil.selected)
+            if(oil.selected){
                 this.currently_being_input_oil = oil
             }
         },
@@ -587,7 +587,7 @@ body {
 }
 .oil_wrapper {
     position: relative;
-    margin: 1em 0 0 0;
+    /* margin: 1em 0 0 0;*/
 }
 .oil_close_icon {
     position: absolute;
