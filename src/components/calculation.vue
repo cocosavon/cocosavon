@@ -114,14 +114,14 @@
                                 </div>
                             </div>
                             <div class="row small">
-                                <div class="col-2 mx-0 px-0 text-center" @click="configPlus1($event, 'percentage_of_water')">
-                                    <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
-                                    </button>
-                                </div>
                                 <div class="col-2 mx-0 px-0 text-center" @click="configMinus1($event, 'percentage_of_water')">
                                     <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
                                         <i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
+                                    </button>
+                                </div>
+                                <div class="col-2 mx-0 px-0 text-center" @click="configPlus1($event, 'percentage_of_water')">
+                                    <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
                                     </button>
                                 </div>
                             </div>
@@ -157,14 +157,14 @@
                                 </div>
                             </div>
                             <div class="row small">
-                                <div class="col-2 mx-0 px-0 text-center" @click="configPlus1($event, 'purity_of_naoh')">
-                                    <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
-                                    </button>
-                                </div>
                                 <div class="col-2 mx-0 px-0 text-center" @click="configMinus1($event, 'purity_of_naoh')">
                                     <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
                                         <i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
+                                    </button>
+                                </div>
+                                <div class="col-2 mx-0 px-0 text-center" @click="configPlus1($event, 'purity_of_naoh')">
+                                    <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
                                     </button>
                                 </div>
                             </div>
@@ -200,14 +200,14 @@
                                 </div>
                             </div>
                             <div class="row small">
-                                <div class="col-2 mx-0 px-0 text-center" @click="configPlus1($event, 'saponification_rate')">
-                                    <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
-                                    </button>
-                                </div>
                                 <div class="col-2 mx-0 px-0 text-center" @click="configMinus1($event, 'saponification_rate')">
                                     <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
                                         <i class="fa fa-minus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
+                                    </button>
+                                </div>
+                                <div class="col-2 mx-0 px-0 text-center" @click="configPlus1($event, 'saponification_rate')">
+                                    <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
+                                        <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;&nbsp;1
                                     </button>
                                 </div>
                             </div>
