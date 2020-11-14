@@ -330,7 +330,7 @@ export default {
             selected_saponification_rate: false,
             percentage_of_water_range: [30, 40],
             purity_of_naoh_range: [95, 100],
-            saponification_rate_range: [85, 95],
+            saponification_rate_range: [85, 97],
         }
     },
     created: function(){
