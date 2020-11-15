@@ -31,8 +31,6 @@
                                         </span>
                                     </div>
 -->
-
-
                                     <div class="row rounded" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
                                         <div class="col-7 pt-1">
                                             <div class="">{{ oil.name_jp }}</div>
@@ -228,44 +226,29 @@
                             </div>
                         </div>
                     </template>
-                    <!--
-                    <div class="row">
-                        <div class="col-7 small pt-2" @click="confClicked('purity_of_naoh')">
-                            苛性ソーダの純度<div class="small">通常 98 〜 100 %</div>
-                        </div>
-                        <template v-if="selected_purity_of_naoh">
-                            <div class="col-3 bg-selected rounded mb-1">
-                                <input type="number" min="30" max="40" v-model="purity_of_naoh" class="form-control text-right" />
-                            </div>
+                </div>
+            </div>
+
+            <div class="card mb-2">
+                <div class="card-header result-color text-center white-text py-2">まとめ</div>
+                <div class="card-body">
+                    <div class="text-left">
+                        <template v-for="oil in oils_array">
+                            <template v-if="oil.selected">
+
+                                    <div class="row rounded" :key="oil.id">
+                                        <div class="col-7 pt-1">
+                                            <div class="">{{ oil.name_jp }}</div>
+                                            <div class="small">({{ oil.name }})</div>
+                                        </div>
+                                        <div class="col-5 pt-1 text-right h1">
+                                            {{ oil.quantity }} <span class="small">{{ oil.unit }}</span>
+                                        </div>
+                                    </div>
+
+                            </template>
                         </template>
-                        <template v-else>
-                            <div class="col-3 text-right">
-                                {{ purity_of_naoh }}
-                            </div>
-                        </template>
-                        <div class="col-1 pt-2">
-                            %
-                        </div>
                     </div>
-                    <div class="row">
-                        <div class="col-7 small pt-1" @click="confClicked('saponification_rate')">
-                            鹸化率<div class="small">通常 85 〜 95 %</div>
-                        </div>
-                        <template v-if="selected_saponification_rate">
-                            <div class="col-3 bg-selected rounded mb-1">
-                                <input type="number" min="30" max="40" v-model="saponification_rate" class="form-control text-right" />
-                            </div>
-                        </template>
-                        <template v-else>
-                            <div class="col-3 text-right">
-                                {{ saponification_rate }}
-                            </div>
-                        </template>
-                        <div class="col-1 pt-2">
-                            %
-                        </div>
-                    </div>
-                    -->
                 </div>
             </div>
 
