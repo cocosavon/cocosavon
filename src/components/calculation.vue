@@ -337,7 +337,7 @@ export default {
             saponification_rate_range: [85, 97],
 
             // show hide settings
-            display_oil_water_amount_cc: false,
+            display_oil_water_amount_cc: true,
         }
     },
     created: function(){
