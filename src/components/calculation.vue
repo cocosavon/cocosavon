@@ -230,7 +230,7 @@
             </div>
 
             <div class="card mb-2">
-                <div class="card-header result-color text-center white-text py-2">まとめ</div>
+                <div class="card-header result-color text-center white-text py-2">使用するオイルまとめ</div>
                 <div class="card-body">
                     <div class="text-left">
                         <template v-for="oil in oils_array">
