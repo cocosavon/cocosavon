@@ -8,8 +8,8 @@
             <div class="card mb-2">
                 <div class="card-header info-color white-text text-center py-2">
                     <span class="material-icons">
-                        local_drink
-                    </span> Oil
+                        オイル (Oil)
+                    </span>
                 </div>
                 <div class="card-body">
                     <template v-if="loading">
