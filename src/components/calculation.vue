@@ -230,7 +230,7 @@
             </div>
 
             <div class="card mb-2">
-                <div class="card-header result-color text-center white-text py-2">使用するオイルまとめ</div>
+                <div class="card-header configuration-color text-center white-text py-2">使用するオイルまとめ</div>
                 <div class="card-body">
                     <div class="text-left">
                         <template v-for="oil in oils_array">
@@ -245,9 +245,11 @@
                                             {{ oil.quantity }} <span class="small">{{ oil.unit }}</span>
                                         </div>
                                     </div>
-
                             </template>
                         </template>
+                        <div class="text-right display-4">
+                            {{ oil_amount_g }} g
+                        </div>
                     </div>
                 </div>
             </div>
@@ -271,14 +273,33 @@
             </div>
 
             <div class="card mb-2">
-                <div class="card-header result-color text-center white-text py-2">オイルと精製水の総体積</div>
+                <div class="card-header result-color text-center white-text py-2">できあがる苛性ソーダ精製水の質量</div>
                 <div class="card-body">
                     <div class="text-right display-4">
-                        {{ oil_water_amount_cc.toFixed(0) }} ml
+                        {{ naoh_amount_plus_water_amount_g.toFixed(0) }} g
                     </div>
                 </div>
             </div>
 
+            <template v-if="display_oil_water_amount_cc">
+                <div class="card mb-2">
+                    <div class="card-header result-color text-center white-text py-2">オイルと精製水の総体積</div>
+                    <div class="card-body">
+                        <div class="text-right display-4">
+                            {{ oil_water_amount_cc.toFixed(0) }} ml
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="card mb-2">
+                <div class="card-header result-color text-center white-text py-2">オイルと苛性ソーダ精製水の総質量</div>
+                <div class="card-body">
+                    <div class="text-right display-4">
+                        {{ oil_amount_plus_naoh_amount_plus_water_amount_g.toFixed(0) }} g
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -314,11 +335,12 @@ export default {
             percentage_of_water_range: [30, 40],
             purity_of_naoh_range: [95, 100],
             saponification_rate_range: [85, 97],
+
+            // show hide settings
+            display_oil_water_amount_cc: false,
         }
     },
     created: function(){
-        console.log('in created()')
-
         let firebaseConfig = {
                 apiKey: "AIzaSyAM8ZPiUa8kRT6Dcyt6oB3iLyeHnzIuYMg",
                 authDomain: "cocosavon-calc.firebaseapp.com",
@@ -346,10 +368,8 @@ export default {
                 oil.selected = false
                 oil.quantity = 0
                 oil.id = doc.id
-                oil.unit = vm.unit_g
+                oil.unit = vm.unit_g  // Because the saponification_number is based on [g], this unit should be [g]
                 vm.oils_array.push(oil)
-
-                console.log(oil)
             });
             vm.loading = false
         }).catch(function(error) {
@@ -358,7 +378,6 @@ export default {
         });
     },
     mounted: function(){
-        console.log('in mounted')
         this.configurationShown = false
     },
     watch: {
@@ -379,8 +398,6 @@ export default {
                     let quantity = this.oils_array[i].quantity
                     if (this.oils_array[i].unit == this.unit_g){
                         // If the unit of the amount of oil is volume [cc]
-                        console.log(quantity)
-                        console.log(this.oil_specific_weight)
                         quantity = quantity / this.oil_specific_weight
                     }
                     oil_amount_cc = oil_amount_cc + parseFloat(quantity)
@@ -400,6 +417,8 @@ export default {
                     oil_amount_g = oil_amount_g + parseFloat(quantity)
                 }
             }
+            //console.log('oil amount: ' + oil_amount_g)
+            //console.log('naoh + water: ' + this.naoh_amount_plus_water_amount_g)
             return oil_amount_g
         },
         naoh_amount_g: function() {
@@ -418,6 +437,12 @@ export default {
         water_amount_g: function() {
             let water_amount_g = this.oil_amount_g * this.percentage_of_water / 100.0
             return water_amount_g
+        },
+        naoh_amount_plus_water_amount_g: function(){
+            return this.naoh_amount_g + this.water_amount_g
+        },
+        oil_amount_plus_naoh_amount_plus_water_amount_g: function(){
+            return this.naoh_amount_plus_water_amount_g + this.oil_amount_g
         }
     },
     methods: {
@@ -510,9 +535,7 @@ export default {
             this.configurationShown = !this.configurationShown
         },
         oilCloseClicked: function(e, oil){
-            console.log('in oilCloseClicked')
             if(oil.selected){
-                console.log('set selected false')
                 Vue.set(oil, 'selected', false)
             }
             e.stopPropagation()
