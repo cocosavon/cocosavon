@@ -599,7 +599,7 @@ body {
     z-index: 1000;
 }
 .aho-enter-active, .aho-leave-active .baka-enter-active, .baka-leave-active {
-      transition: opacity .5s
+      transition: opacity .7s
 }
 .aho-enter, .aho-leave-to .baka-enter, .baka-leave-to {
         opacity: 0
