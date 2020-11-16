@@ -274,6 +274,7 @@
                     <div class="text-right display-4">
                         {{ naoh_amount_plus_water_amount_g.toFixed(0) }} g
                     </div>
+                    {{ concentration_of_naoh_solution }} %
                 </div>
             </div>
 
@@ -439,6 +440,9 @@ export default {
         },
         oil_amount_plus_naoh_amount_plus_water_amount_g: function(){
             return this.naoh_amount_plus_water_amount_g + this.oil_amount_g
+        },
+        concentration_of_naoh_solution: function() {
+            return this.naoh_amount_g / this.naoh_amount_plus_water_amount_g * 100
         }
     },
     methods: {
