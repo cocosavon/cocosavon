@@ -12,15 +12,17 @@
                     </span>
                 </div>
                 <div class="card-body">
-                    <template v-if="loading">
+                    <transition name="baka" mode="out-in">
+                    <div v-if="loading" key="3">
                         <div class="text-center">
                             <div class="spinner-border text-info" role="status">
                                   <span class="sr-only">Loading...</span>
                             </div>
                         </div>
-                    </template>
-                    <template v-else>
+                    </div>
+                    <div v-else key="4">
                         <template v-for="oil in oils_array">
+<<<<<<< HEAD
                             <template v-if="oil.selected">
                                 <div class="container mb-2 rounded oil_wrapper" :class="get_being_input_class(oil)">
 <!--
@@ -35,50 +37,77 @@
                                         <div class="col-7 pt-1">
                                             <div class="">{{ oil.name_jp }}</div>
                                             <div class="small">({{ oil.name }})</div>
-                                        </div>
-                                        <div class="col-5 pt-1 text-right h1">
-                                            {{ oil.quantity }} <span class="small">{{ oil.unit }}</span>
-                                        </div>
+||||||| merged common ancestors
+                            <template v-if="oil.selected">
+                                <transition name="aho">
+                                <div class="container mb-2 rounded oil_wrapper" :class="get_being_input_class(oil)">
+<!--
+                                    <div class="oil_close_icon" @click="oilCloseClicked($event, oil)">
+                                        <span class="fa-stack fa-1x">
+                                            <i class="fas fa-circle fa-stack-2x"></i>
+                                            <i class="fas fa-times fa-stack-1x fa-inverse"></i>
+                                        </span>
                                     </div>
-                                    <div class="row small">
-                                        <div class="col-2 mx-0 px-0 text-center" @click="minus100($event, oil)">
-                                            <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
-                                                <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
-                                                <div>100</div>
-                                            </button>
+-->
+                                    <div class="row rounded" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
+                                        <div class="col-7 pt-1">
+                                            <div class="">{{ oil.name_jp }}</div>
+                                            <div class="small">({{ oil.name }})</div>
+=======
+                            <transition name="aho" mode="out-in">
+                                <div v-if="oil.selected" key="1">
+                                    <div class="container mb-2 rounded oil_wrapper" :class="get_being_input_class(oil)">
+                                        <div class="row rounded" :class="get_being_input_class(oil)" @click="oilClicked($event, oil)" :key="oil.id">
+                                            <div class="col-7 pt-1">
+                                                <div class="">{{ oil.name_jp }}</div>
+                                                <div class="small">({{ oil.name }})</div>
+                                            </div>
+                                            <div class="col-5 pt-1 text-right h1">
+                                                {{ oil.quantity }} <span class="small">{{ oil.unit }}</span>
+                                            </div>
+>>>>>>> working-trnsition
                                         </div>
-                                        <div class="col-2 mx-0 px-0 text-center" @click="minus10($event, oil)">
-                                            <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
-                                                <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
-                                                <div>10</div>
-                                            </button>
-                                        </div>
-                                        <div class="col-2 mx-0 px-0 text-center" @click="minus1($event, oil)">
-                                            <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
-                                                <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
-                                                <div>1</div>
-                                            </button>
-                                        </div>
-                                        <div class="col-2 mx-0 px-0 text-center" @click="plus1($event, oil)">
-                                            <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                                <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                                                <div>1</div>
-                                            </button>
-                                        </div>
-                                        <div class="col-2 mx-0 px-0 text-center" @click="plus10($event, oil)">
-                                            <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                                <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                                                <div>10</div>
-                                            </button>
-                                        </div>
-                                        <div class="col-2 mx-0 px-0 text-center" @click="plus100($event, oil)">
-                                            <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
-                                                <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
-                                                <div>100</div>
-                                            </button>
+                                        <div class="row small">
+                                            <div class="col-2 mx-0 px-0 text-center" @click="minus100($event, oil)">
+                                                <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
+                                                    <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                                                    <div>100</div>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 mx-0 px-0 text-center" @click="minus10($event, oil)">
+                                                <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
+                                                    <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                                                    <div>10</div>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 mx-0 px-0 text-center" @click="minus1($event, oil)">
+                                                <button type="button" class="btn btn-deep-orange mx-0 my-0 px-2 py-1">
+                                                    <div><i class="fa fa-minus-circle" aria-hidden="true"></i></div>
+                                                    <div>1</div>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 mx-0 px-0 text-center" @click="plus1($event, oil)">
+                                                <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
+                                                    <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                    <div>1</div>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 mx-0 px-0 text-center" @click="plus10($event, oil)">
+                                                <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
+                                                    <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                    <div>10</div>
+                                                </button>
+                                            </div>
+                                            <div class="col-2 mx-0 px-0 text-center" @click="plus100($event, oil)">
+                                                <button type="button" class="btn btn-cyan mx-0 my-0 px-2 py-1">
+                                                    <div><i class="fa fa-plus-circle" aria-hidden="true"></i></div>
+                                                    <div>100</div>
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
                             </template>
                             <template v-else>
                                 <div class="container mb-2">
@@ -86,12 +115,31 @@
                                         <div class="col-12 pt-1 pb-1" @click="oilClicked($event, oil)">
                                             <div class="">{{ oil.name_jp }}</div>
                                             <div class="small">({{ oil.name }})</div>
+||||||| merged common ancestors
+                                </transition>
+                            </template>
+                            <template v-else>
+                                <div class="container mb-2">
+                                    <div class="row" :key="oil.id">
+                                        <div class="col-12 pt-1 pb-1" @click="oilClicked($event, oil)">
+                                            <div class="">{{ oil.name_jp }}</div>
+                                            <div class="small">({{ oil.name }})</div>
+=======
+                                <div v-else key="2">
+                                    <div class="container mb-2">
+                                        <div class="row" :key="oil.id">
+                                            <div class="col-12 pt-1 pb-1" @click="oilClicked($event, oil)">
+                                                <div class="">{{ oil.name_jp }}</div>
+                                                <div class="small">({{ oil.name }})</div>
+                                            </div>
+>>>>>>> working-trnsition
                                         </div>
                                     </div>
                                 </div>
-                            </template>
+                            </transition>
                         </template>
-                    </template>
+                    </div>
+                    </transition>
                 </div>
             </div>
 
@@ -602,12 +650,10 @@ body {
     color: crimson;
     z-index: 1000;
 }
-.aho-enter-active, .aho-leave-active {
+.aho-enter-active, .aho-leave-active .baka-enter-active, .baka-leave-active {
       transition: opacity .5s
-  }
-
-.aho-enter, .aho-leave-to {
+}
+.aho-enter, .aho-leave-to .baka-enter, .baka-leave-to {
         opacity: 0
-    }
-
+}
 </style>
