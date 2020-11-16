@@ -9,6 +9,9 @@ new Vue({
     data: {
         message: 'aho'
     },
+    directive: {
+
+    },
     components: {
         App
     },

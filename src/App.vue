@@ -4,9 +4,7 @@
         <router-link to="/">Home</router-link>
         <router-link to="/calc">Calc</router-link>
         -->
-        <div class="test">
-            <router-view />
-        </div>
+        <router-view />
     </div>
 </template>
 
@@ -17,6 +15,7 @@ import uuid from 'uuid'
 import 'mdbootstrap/css/bootstrap.min.css'
 //import 'mdbootstrap/css/mdb.css'
 import 'mdbootstrap/css/style.css'
+import '@fortawesome/fontawesome-free/js/all.js';
 
 
 export default {
