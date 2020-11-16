@@ -22,7 +22,6 @@
                     <template v-else>
                         <template v-for="oil in oils_array">
                             <template v-if="oil.selected">
-                                <transition name="aho">
                                 <div class="container mb-2 rounded oil_wrapper" :class="get_being_input_class(oil)">
 <!--
                                     <div class="oil_close_icon" @click="oilCloseClicked($event, oil)">
@@ -80,7 +79,6 @@
                                         </div>
                                     </div>
                                 </div>
-                                </transition>
                             </template>
                             <template v-else>
                                 <div class="container mb-2">
