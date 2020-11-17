@@ -31,7 +31,7 @@
                                                 <div class="small">({{ oil.name }})</div>
                                             </div>
                                             <div class="col-5 pt-1 text-right h1">
-                                                {{ oil.quantity }} <span class="small">{{ oil.unit }}</span>
+                                                <span class="oil_quantity" :id="'oil_quantity_' + oil.id">{{ oil.quantity }}</span><span class="small">{{ oil.unit }}</span>
                                             </div>
                                         </div>
                                         <div class="row small">
@@ -489,17 +489,30 @@ export default {
                 }
             }
         },
+        plus_or_minus_clicked: function(oil_id){
+            let number_text = document.querySelector('#oil_quantity_' + oil_id);
+            console.log(number_text)
+            number_text.classList.add('highlight');
+
+            // remove it after 50ms
+            setTimeout(function() {
+                number_text.classList.remove('highlight');
+            }, 50);
+        },
         plus100: function(e, oil){
             oil.quantity = oil.quantity + 100
             this.currently_being_input_oil = oil
+            this.plus_or_minus_clicked(oil.id)
         },
         plus10: function(e, oil){
             oil.quantity = oil.quantity + 10
             this.currently_being_input_oil = oil
+            this.plus_or_minus_clicked(oil.id)
         },
         plus1: function(e, oil){
             oil.quantity = oil.quantity + 1
             this.currently_being_input_oil = oil
+            this.plus_or_minus_clicked(oil.id)
         },
         minus100: function(e, oil){
             oil.quantity = oil.quantity - 100
@@ -507,6 +520,7 @@ export default {
                 oil.quantity = 0
             }
             this.currently_being_input_oil = oil
+            this.plus_or_minus_clicked(oil.id)
         },
         minus10: function(e, oil){
             oil.quantity = oil.quantity - 10
@@ -514,6 +528,7 @@ export default {
                 oil.quantity = 0
             }
             this.currently_being_input_oil = oil
+            this.plus_or_minus_clicked(oil.id)
         },
         minus1: function(e, oil){
             oil.quantity = oil.quantity - 1
@@ -521,6 +536,7 @@ export default {
                 oil.quantity = 0
             }
             this.currently_being_input_oil = oil
+            this.plus_or_minus_clicked(oil.id)
         },
         confClicked: function(para) {
             if(para === 'percentage_of_water'){
@@ -607,5 +623,17 @@ body {
 }
 .aho-enter, .aho-leave-to .baka-enter, .baka-leave-to {
         opacity: 0
+}
+.oil_quantity {
+    /* transition: font-size 1s; */
+    transition: color 0.6s; 
+}
+.highlight {
+    /*
+    font-size: 1.2em;
+    transition: font-size 0s; 
+    */
+    color: darkcyan;
+    transition: color 0s; 
 }
 </style>
