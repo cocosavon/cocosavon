@@ -251,7 +251,7 @@
             </div>
 
             <div class="card mb-2">
-                <div class="card-header result-color text-center white-text py-2">必要な精製水の質量</div>
+                <div class="card-header required-color text-center white-text py-2">必要な精製水の質量</div>
                 <div class="card-body">
                     <div class="text-right display-4">
                         {{ water_amount_g.toFixed(0) }} g
@@ -260,7 +260,7 @@
             </div>
 
             <div class="card mb-2">
-                <div class="card-header result-color text-center white-text py-2">必要な苛性ソーダの質量</div>
+                <div class="card-header required-color text-center white-text py-2">必要な苛性ソーダの質量</div>
                 <div class="card-body">
                     <div class="text-right display-4">
                         {{ naoh_amount_g.toFixed(0) }} g
@@ -274,29 +274,24 @@
                     <div class="text-right display-4">
                         {{ naoh_amount_plus_water_amount_g.toFixed(0) }} g
                     </div>
+                    <!--
                     {{ concentration_of_naoh_solution }} %
+                    -->
                 </div>
             </div>
 
-            <template v-if="display_oil_water_amount_cc">
-                <div class="card mb-2">
-                    <div class="card-header result-color text-center white-text py-2">オイルと精製水の総体積</div>
-                    <div class="card-body">
-                        <div class="text-right display-4">
-                            {{ oil_water_amount_cc.toFixed(0) }} ml
-                        </div>
-                    </div>
-                </div>
-            </template>
-
             <div class="card mb-2">
-                <div class="card-header result-color text-center white-text py-2">オイルと苛性ソーダ精製水の総質量</div>
+                <div class="card-header result-color text-center white-text py-2">オイルと苛性ソーダ精製水</div>
                 <div class="card-body">
+                    <div class="text-right display-4">
+                        {{ oil_amount_plus_naoh_amount_plus_water_amount_cc.toFixed(0) }} ml
+                    </div>
                     <div class="text-right display-4">
                         {{ oil_amount_plus_naoh_amount_plus_water_amount_g.toFixed(0) }} g
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </template>
@@ -323,6 +318,7 @@ export default {
             percentage_of_water: 34, // [%] 30 to 40,
             purity_of_naoh: 98, // [%] 95 to 100
             saponification_rate: 92, // [%] 85 to 95
+            specific_gravity_of_naoh_solution: 1.3,  // NaOH水溶液の比重
 
             // Other configurations
             configurationShown: null,
@@ -332,9 +328,6 @@ export default {
             percentage_of_water_range: [30, 40],
             purity_of_naoh_range: [95, 100],
             saponification_rate_range: [85, 97],
-
-            // show hide settings
-            display_oil_water_amount_cc: true,
         }
     },
     created: function(){
@@ -388,19 +381,25 @@ export default {
         }
     },
     computed: {
-        oil_water_amount_cc: function() {
+        oil_amount_cc: function() {
             let oil_amount_cc = 0
             for (let i=0; i<this.oils_array.length; i++){
                 if (this.oils_array[i].selected){
                     let quantity = this.oils_array[i].quantity
                     if (this.oils_array[i].unit == this.unit_g){
-                        // If the unit of the amount of oil is volume [cc]
+                        // If the unit of the amount of oil is volume [g]
                         quantity = quantity / this.oil_specific_weight
                     }
                     oil_amount_cc = oil_amount_cc + parseFloat(quantity)
                 }
             }
-            return oil_amount_cc + this.water_amount_g
+            return oil_amount_cc
+        },
+        oil_water_amount_cc: function() {
+            return this.oil_amount_cc + this.water_amount_g
+        },
+        oil_amount_plus_naoh_amount_plus_water_amount_cc: function(){
+            return this.oil_amount_cc + (this.naoh_amount_g + this.water_amount_g) / this.specific_gravity_of_naoh_solution
         },
         oil_amount_g: function() {
             let oil_amount_g = 0
@@ -600,9 +599,11 @@ body {
 .text-right {
     text-align: right;
 }
-.result-color {
-    /* background-color: #ff8c00; */
+.required-color {
     background-color: darkorange;
+}
+.result-color {
+    background-color: lightseagreen;
 }
 .configuration-color {
     background-color: darkgray;
